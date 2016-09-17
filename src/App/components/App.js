@@ -1,7 +1,12 @@
 import React, { PropTypes } from 'react'
 
+import Navigation from './Navigation'
+
 const App = ({ children }) => (
-  <div>{ children }</div>
+  <div>
+    <Navigation />
+    <div>{ children }</div>
+  </div>
 )
 
 App.propTypes = {

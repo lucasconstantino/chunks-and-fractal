@@ -1,6 +1,6 @@
 import About from './components/About'
 
 module.exports = {
-  path: '/about',
+  path: 'about',
   component: About,
 }

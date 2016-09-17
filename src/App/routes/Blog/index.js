@@ -1,6 +1,6 @@
 import Blog from './components/Blog'
 
 module.exports = {
-  path: '/blog',
+  path: 'blog',
   component: Blog,
 }

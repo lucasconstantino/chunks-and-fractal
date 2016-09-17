@@ -1,1 +1,3 @@
-alert('carregou o modulo 1!')
+import shout from './shout'
+
+shout('carregou o modulo 1')

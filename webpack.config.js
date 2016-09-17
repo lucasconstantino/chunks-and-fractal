@@ -1,9 +1,6 @@
-const CommonsChunkPlugin = require('webpack').optimize.CommonsChunkPlugin
-
 module.exports = {
   entry: {
-    index: './src/index.js',
-    shout: ['./src/shout.js']
+    index: './src/index.js'
   },
 
   output: {
@@ -17,11 +14,4 @@ module.exports = {
       { test: /\.js$/, loader: 'babel', exclude: /node_modules/ }
     ],
   },
-
-  plugins: [
-    new CommonsChunkPlugin({
-      name: 'shout',
-      filename: 'shout.bundle.js'
-    })
-  ]
 }

@@ -1,22 +1,11 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-const button = document.createElement('button')
-button.innerHTML = 'carregar modulo 1'
+// ========================================================
+// Render setup
+// ========================================================
 
-document.body.appendChild(button)
+const container = document.createElement('div')
+document.body.appendChild(container)
 
-button.addEventListener('click', () => {
-  require.ensure([], require => {
-    require('./module').default
-  })
-})
-
-const button2 = document.createElement('button')
-button2.innerHTML = 'carregar modulo 2'
-
-document.body.appendChild(button2)
-
-button2.addEventListener('click', () => {
-  require.ensure([], require => {
-    require('./module-2').default
-  })
-})
+ReactDOM.render(<div>Hello world!</div>, container)

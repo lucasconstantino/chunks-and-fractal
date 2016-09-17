@@ -1,6 +1,10 @@
-import MapOfEvents from './components/MapOfEvents'
 
 module.exports = {
   path: 'map',
-  component: MapOfEvents
+
+  getComponent (nextState, cb) {
+    require.ensure([], (require) => {
+      cb(null, require('./components/MapOfEvents').default)
+    })
+  }
 }

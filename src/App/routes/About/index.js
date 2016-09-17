@@ -1,6 +1,10 @@
-import About from './components/About'
 
 module.exports = {
   path: 'about',
-  component: About,
+
+  getComponent (nextState, cb) {
+    require.ensure([], (require) => {
+      cb(null, require('./components/About').default)
+    })
+  }
 }

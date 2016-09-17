@@ -1,13 +1,19 @@
-import Events from './components/Events'
-
-import Calendar from './routes/Calendar'
-import MapOfEvents from './routes/MapOfEvents'
 
 module.exports = {
   path: 'events',
-  component: Events,
-  childRoutes: [
-    Calendar,
-    MapOfEvents,
-  ],
+
+  getComponent (nextState, cb) {
+    require.ensure([], (require) => {
+      cb(null, require('./components/Events').default)
+    })
+  },
+
+  getChildRoutes (partialNextState, cb) {
+    require.ensure([], (require) => {
+      cb(null, [
+        require('./routes/Calendar'),
+        require('./routes/MapOfEvents')
+      ])
+    })
+  }
 }

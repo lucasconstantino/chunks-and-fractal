@@ -1,6 +1,10 @@
-import Calendar from './components/Calendar'
 
 module.exports = {
   path: 'calendar',
-  component: Calendar
+
+  getComponent (nextState, cb) {
+    require.ensure([], (require) => {
+      cb(null, require('./components/Calendar').default)
+    })
+  }
 }

@@ -1,6 +1,10 @@
-import Blog from './components/Blog'
 
 module.exports = {
   path: 'blog',
-  component: Blog,
+
+  getComponent (nextState, cb) {
+    require.ensure([], (require) => {
+      cb(null, require('./components/Blog').default)
+    })
+  }
 }

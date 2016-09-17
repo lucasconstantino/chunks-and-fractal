@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
-const App = () => (
-  <div>Application main component</div>
+const App = ({ children }) => (
+  <div>{ children }</div>
 )
+
+App.propTypes = {
+  children: PropTypes.node
+}
 
 export default App

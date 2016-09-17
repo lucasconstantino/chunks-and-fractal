@@ -7,7 +7,7 @@
     "clean": "rm -Rf dist/",
     "build": "npm run clean && webpack",
     "watch": "npm run clean && webpack --watch",
-    "dev": "webpack-dev-server --port 1338 --inline --open"
+    "dev": "webpack-dev-server --port 1338 --inline --open --history-api-fallback"
   },
   "dependencies": {
     "react": "^15.3.1",
